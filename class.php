@@ -37,7 +37,6 @@ class MyComponent extends CBitrixComponent
                 $this->arResult["INVALID_DISCOUNT"] = true;
             }
         }
-//}
         
         $this->includeComponentTemplate();
 		
