@@ -10,15 +10,15 @@ class MyComponent extends CBitrixComponent
 
         $lastDiscount = $this->getLastUserDiscount($userId);
 
- if (!$USER->IsAuthorized()) {
+		if (!$USER->IsAuthorized()) {
             echo "<p>Скидку может получить только зарегистрированный пользователь</p>";
 			$this->arResult["SHOW_BUTTON"] = false;
         } else {
-        
-        if (!$lastDiscount || (time() - strtotime($lastDiscount["generated_at"])) >= 3600) {
-            $this->arResult["SHOW_BUTTON"] = true;
-        }
-}
+			if (!$lastDiscount || (time() - strtotime($lastDiscount["generated_at"])) >= 3600) {
+				$this->arResult["SHOW_BUTTON"] = true;
+			}
+		}
+		
         if ($_SERVER["REQUEST_METHOD"] === "POST" && isset($_POST["getDiscount"])) {		
             $discountValue = rand(1, 50);
             $discountCode = uniqid();
