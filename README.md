@@ -8,11 +8,12 @@
 /bitrix/components/my/my
 ### Таблица для хранения данных
 CREATE TABLE user_discounts (
-    user_id INT,
+    user_id INT PRIMARY KEY,
     discount_value INT,
-    generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (user_id)
+    discount_code VARCHAR(255),
+    generated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
 ### Вставьте компонент в нужное место страницы (php)
 $APPLICATION->IncludeComponent(
     "my:my", 
