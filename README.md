@@ -7,7 +7,7 @@
 ### Директория компонента
 /bitrix/components/my/my
 ### Таблица для хранения данных
-CREATE TABLE user_discounts (
+CREATE TABLE b_user_discounts (
     user_id INT PRIMARY KEY,
     discount_value INT,
     discount_code VARCHAR(255),
